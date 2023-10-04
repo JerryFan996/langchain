@@ -6,7 +6,10 @@ from langchain.chat_models.base import BaseChatModel, SimpleChatModel
 from langchain.llms.base import BaseLLM, LLM
 
 INTEGRATIONS_DIR = (
-    Path(os.path.abspath(__file__)).parents[1] / "extras" / "integrations"
+    Path(os.path.abspath(__file__)).parents[1]
+    / "docs_skeleton"
+    / "docs"
+    / "integrations"
 )
 LLM_IGNORE = ("FakeListLLM", "OpenAIChat", "PromptLayerOpenAIChat")
 LLM_FEAT_TABLE_CORRECTION = {
@@ -110,7 +113,15 @@ def get_llm_table():
         "batch_generate",
         "batch_agenerate",
     ]
-    title = ["Model", "Invoke", "Async invoke", "Stream", "Async stream", "Batch", "Async batch"]
+    title = [
+        "Model",
+        "Invoke",
+        "Async invoke",
+        "Stream",
+        "Async stream",
+        "Batch",
+        "Async batch",
+    ]
     rows = [title, [":-"] + [":-:"] * (len(title) - 1)]
     for llm, feats in sorted(final_feats.items()):
         rows += [[llm, "✅"] + ["✅" if feats.get(h) else "❌" for h in header[1:]]]

@@ -24,8 +24,8 @@ _IMPORT_RE = re.compile(
 
 _CURRENT_PATH = Path(__file__).parent.absolute()
 # Directory where generated markdown files are stored
-_DOCS_DIR = _CURRENT_PATH / "docs"
-_JSON_PATH = _CURRENT_PATH.parent / "api_reference" / "guide_imports.json"
+_DOCS_DIR = _CURRENT_PATH / "docs_skeleton" / "docs"
+_JSON_PATH = _CURRENT_PATH / "api_reference" / "guide_imports.json"
 
 
 def find_files(path):
